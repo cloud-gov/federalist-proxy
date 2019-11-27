@@ -1,0 +1,7 @@
+---
+keys:
+  - https://download.newrelic.com/infrastructure_agent/gpg/newrelic-infra.gpg
+repos:
+  - deb [arch=amd64] https://download.newrelic.com/infrastructure_agent/linux/apt bionic main
+packages:
+  - newrelic-infra

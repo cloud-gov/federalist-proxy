@@ -1,9 +1,13 @@
 ---
 applications:
 - name: federalist-proxy-staging
-  buildpack: https://github.com/cloudfoundry/nginx-buildpack.git
+  buildpacks:
+    - https://github.com/cloudfoundry/apt-buildpack.git
+    - https://github.com/cloudfoundry/nginx-buildpack.git
   memory: 96MB
   instances: 2
   env:
     FEDERALIST_PROXY_SERVER_NAME: federalist-proxy-staging
     FEDERALIST_S3_BUCKET_URL: http://cg-f28e32aa-d42e-4906-a813-7d726f69183c.s3-website-us-gov-west-1.amazonaws.com
+    NRIA_LICENSE_KEY: <provide LICENSE_KEY via Cloud.gov>
+    NRIA_STATUS_URL: https://federalist-proxy-staging-test.app.cloud.gov/basic_status
